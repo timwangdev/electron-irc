@@ -14,7 +14,7 @@
           "react"
         ],
         "plugins": [
-          "transform-async-to-generator"
+          "react-hot-loader/babel"
         ],
         "sourceMaps": "inline"
       }
@@ -31,9 +31,6 @@
             }
           ],
           "react"
-        ],
-        "plugins": [
-          "transform-async-to-generator"
         ],
         "sourceMaps": "none"
       }
