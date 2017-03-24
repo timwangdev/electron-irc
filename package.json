@@ -1,0 +1,68 @@
+{
+    "name": "electron-irc",
+    "productName": "electron-irc",
+    "version": "0.0.1",
+    "description": "A IRC client, built with electron",
+    "main": "src/index.js",
+    "repository": "https://github.com/timwangdev/electron-irc",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "lint": "eslint src"
+    },
+    "keywords": [
+        "Electron",
+        "macOS",
+        "chat",
+        "React",
+        "IRC"
+    ],
+    "author": "Tim Wang<tim.wangyao@gmail.com>",
+    "license": "MIT",
+    "config": {
+        "forge": {
+            "make_targets": {
+                "win32": [
+                    "squirrel"
+                ],
+                "darwin": [
+                    "zip"
+                ],
+                "linux": [
+                    "deb",
+                    "rpm"
+                ]
+            },
+            "electronPackagerConfig": {},
+            "electronWinstallerConfig": {
+                "name": "electron_irc_1"
+            },
+            "electronInstallerDebian": {},
+            "electronInstallerRedhat": {},
+            "github_repository": {
+                "owner": "",
+                "name": ""
+            },
+            "windowsStoreConfig": {
+                "packageName": "",
+                "name": "electronirc1"
+            }
+        }
+    },
+    "dependencies": {
+        "electron-compile": "^6.1.3",
+        "node-irc": "^0.0.4"
+    },
+    "devDependencies": {
+        "babel-plugin-transform-async-to-generator": "^6.22.0",
+        "babel-preset-env": "^1.2.2",
+        "babel-preset-react": "^6.23.0",
+        "electron-prebuilt-compile": "1.6.2",
+        "eslint": "^3.18.0",
+        "eslint-config-airbnb": "^14.1.0",
+        "eslint-plugin-import": "^2.2.0",
+        "eslint-plugin-jsx-a11y": "^3.0.0",
+        "eslint-plugin-react": "^6.10.3"
+    }
+}
