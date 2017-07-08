@@ -1,4 +1,5 @@
 const electron = require('electron');
+const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.
@@ -6,6 +7,8 @@ const BrowserWindow = electron.BrowserWindow;
 
 const path = require('path');
 const url = require('url');
+
+const isDevMode = process.execPath.match(/[\\/]electron/);		
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -24,7 +27,9 @@ function createWindow() {
     mainWindow.loadURL(startUrl);
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    if (isDevMode) {
+        installExtension(REACT_DEVELOPER_TOOLS).then(() => mainWindow.webContents.openDevTools());
+    }
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {

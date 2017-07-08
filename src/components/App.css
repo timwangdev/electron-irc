@@ -11,10 +11,12 @@
 }
 
 .account-form .hostname {
+  display: inline-block;
   width: calc(100% - 110px);
 }
 
 .account-form .port {
+  display: inline-block;
   float: right;
   width: 100px;
 }
