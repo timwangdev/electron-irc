@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './setup.js';
 import './index.css';
 import App from './components/App';
-
-const electron = window.require('electron');
-window.electron = electron;
 
 ReactDOM.render(<App />, document.getElementById('root'));

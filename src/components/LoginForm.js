@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { Form, Input, Checkbox, Button } from 'antd';
 import { Link } from 'react-router-dom'
 
+const ipc = window.electron.ipcRenderer;
+
 export class LoginForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        ipc.send('irc:create-client', values);
       }
     });
   };
@@ -26,7 +29,7 @@ export class LoginForm extends Component {
         <Form.Item className="port">
           {getFieldDecorator('port', {
             rules: [{ required: true, message: 'Please input the port number (defalut: 6667)!'}],
-            initialValue: 6667
+            initialValue: 6667,
           })(
             <Input placeholder="Port" type="number" />
           )}
@@ -44,7 +47,7 @@ export class LoginForm extends Component {
           )}
         </Form.Item>
         <Form.Item>
-          {getFieldDecorator('ssl', { initialValue: false })(
+          {getFieldDecorator('ssl')(
             <Checkbox>Encrypt connection using SSL</Checkbox>
           )}
         </Form.Item>
