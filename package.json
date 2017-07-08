@@ -6,7 +6,7 @@
   "repository": "https://github.com/timwangdev/electron-irc",
   "main": "src/main/index.js",
   "homepage": "./",
-    "keywords": [
+  "keywords": [
     "Electron",
     "macOS",
     "chat",
@@ -24,6 +24,7 @@
     "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron ."
   },
   "dependencies": {
+    "antd": "^2.12.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.10"
