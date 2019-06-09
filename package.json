@@ -1,11 +1,10 @@
 {
   "name": "electron-irc",
   "productName": "electron-irc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A IRC client, built with electron",
   "repository": "https://github.com/timwangdev/electron-irc",
-  "main": "src/main/index.js",
-  "homepage": "./",
+  "main": "src/main.js",
   "keywords": [
     "Electron",
     "macOS",
@@ -16,23 +15,17 @@
   "author": "Tim Wang<tim.wangyao@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "electron": "electron .",
-    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron ."
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/main.js"
   },
   "dependencies": {
-    "antd": "^2.12.0",
-    "irc": "^0.5.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-router-dom": "^4.1.1",
-    "react-scripts": "1.0.10"
+    "irc-framework": "^4.3.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "electron": "^1.6.11",
-    "electron-devtools-installer": "^2.2.0"
+    "electron": "^5.0.3"
   }
 }
