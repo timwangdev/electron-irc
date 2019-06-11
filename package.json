@@ -17,8 +17,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "npm run build && electron ./dist/main.js"
+    "start": "yarn build && electron ./dist/main/index.js"
   },
   "dependencies": {
     "irc-framework": "^4.3.0",
