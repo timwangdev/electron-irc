@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "jsx": "react",
+    "target": "esnext",
     "noImplicitAny": true,
     "sourceMap": true,
     "outDir": "dist",
